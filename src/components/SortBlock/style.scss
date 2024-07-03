@@ -1,0 +1,34 @@
+.sort {
+    display: flex;
+    justify-content: end;
+    gap: 25px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 18px;
+
+    &__parm {
+        display: flex;
+        align-items: center;
+        color: #4556EE;
+        cursor: pointer;
+    }
+
+    &__arrow {
+        margin-left: 10px;
+        height: 20px;
+        width: auto;
+        transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+
+        &-up {
+            transform: rotate(270deg);
+            -webkit-transform: rotate(270deg);
+            -moz-transform: rotate(270deg);
+            -ms-transform: rotate(270deg);
+            -o-transform: rotate(270deg);
+        }
+    }
+}
