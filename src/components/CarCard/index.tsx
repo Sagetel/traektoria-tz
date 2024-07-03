@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './style.scss'
 import AutoType from '../../interfaces/AutoType'
 import { useDispatch } from "react-redux";
@@ -7,6 +7,13 @@ import MyInput from '../UI/MyInput';
 
 function CarCard(props: { auto: AutoType }) {
     const { auto } = props;
+    const colors: { [key: string]: string } = {
+        red: 'Красный',
+        black: 'Черный',
+        white: 'Белый',
+        blue: 'Синий',
+        silver: 'Серебряный',
+    }
     const dispatch = useDispatch();
     const [editModeOn, setEditModeOn] = useState(false);
     const [name, setName] = useState<string>(auto.name)
@@ -37,7 +44,7 @@ function CarCard(props: { auto: AutoType }) {
                 <h2 className='card__field card__name'>{name} {model}</h2>
             }
             <div className='card__field'>Год: {auto.year}</div>
-            <div className='card__field'>Цвет: {auto.color}</div>
+            <div className='card__field'>Цвет: {auto.color && colors[auto.color]}</div>
             {editModeOn ?
                 <MyInput value={price} setNumberState={setPrice} placeholder={'Цена'} />
                 :
